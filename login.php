@@ -8,14 +8,19 @@
     <link rel="stylesheet" href="login.css">
 </head>
 <body>
+
     <form id="login">
         <div class="login-box">
             <h2>Login</h2>
-        <input type="text" id="username" class="username" placeholder="Username"><br>
-        <input type="password" id="password" class="password" minlength="6" placeholder="Password"><br>
-        <span></span>
-        <a href="">Forgot Your Password?</a><br>
-        <input type="submit" value="Submit">
+            <label> Username</label>
+            <input type="text" id="username" class="username" placeholder="Type your username"><br>
+
+            <label> Password</label>
+            <input type="password" id="password" class="password" minlength="6" placeholder="Type your Password">
+            <span></span>
+            <a href="">Forgot Your Password?</a>
+            <input type="submit" value="Submit"> <br>
+            <a onclick=toggleForms(1)>Doesn't have an account?</a>
         </div>       
     </form>
 </body>

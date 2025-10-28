@@ -10,29 +10,25 @@
 
     <form id="signup" class="signup-box">
          <h2>Sign Up</h2>
+        <label> Username</label>
+        <input type="text" id="userName" class="signin" pattern="[A-Za-z]+" placeholder="e.g. JohnDoe">
 
-        <label>Username</label>
-        <input type="text" id="userName" class="signin" pattern="[A-Za-z]+"><br>
+        <label> Email</label>
+        <input type="email" id="userEmail" class="signin" placeholder="e.g. username@gmail.com ">
 
-        <label>Email</label>
-        <input type="email" id="userEmail" class="signin"><br>
+        <label> Phone Number</label>
+        <input type="number" id="userNumber" class="signin" pattern="[0-9]+" maxlength="11" placeholder="e.g. 09xxxxxxxxx">
 
-        <label>Phone Number</label>
-        <input type="number" id="userNumber" class="signin" pattern="[0-9]+" maxlength="11"><br>
-
-        <label>Password</label>
-        <input type="password" id="userPass" class="signin" minlength="6"><br>
-
+        <label> Password</label>
+        <input type="password" id="userPass" class="signin" minlength="6" placeholder="Minimum 6 characters">
         <span id="notice1"></span>
 
-        <label>Confirm Password</label>
-        <input type="password" id="userConfirmPass" class="signin" minlength="6"><br>
-
+        <label> Confirm Password</label>
+        <input type="password" id="userConfirmPass" class="signin" minlength="6" placeholder="Confirm Password">
         <span id="notice2"></span>
 
         <button type="submit" class="signup-button">Submit</button><br>
-
-        <a href="" class="login-link">Already have an account?</a><br>
+        <a class="login-link" onclick="toggleForms(2)">Already have an account?</a><br>
 
     </form>
 </body>

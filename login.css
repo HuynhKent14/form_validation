@@ -1,23 +1,16 @@
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #ffffff;
-}
-
 .login-box {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 400px;
-  height: 500px;
+  height: 550px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   background-color: #fff;
+}
+label {
+  width: 60%;
 }
 
 .username,
@@ -58,4 +51,9 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+span {
+  color: red;
+  font-size: 12px;
 }

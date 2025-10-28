@@ -1,212 +1,61 @@
-/* login layout */
-
-.login {
-  width: 900px;
-  height: 500px;
-  margin: 50px auto;
-  display: flex;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-}
-
-/* form */
-.login-box {
-  width: 50%;
-  padding: 40px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.login-box h2 {
-  font-size: 28px;
-  color: #343434;
-  margin-bottom: 15px;
-}
-
-/* small text */
-.login-box p {
-  color: #777;
-  font-size: 13px;
-  margin: 10px 0;
-}
-
-/* input */
-.login-box input {
-  width: 80%;
-  padding: 10px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 5px;
-  background-color: #f1f1f1;
-  font-size: 14px;
-}
-
-/* forgot password */
-.login-box a {
-  font-size: 13px;
-  color: #423f3f;
-  text-decoration: none;
-}
-
-.login-box a:hover {
-  text-decoration: underline;
-}
-
-/* login button */
-.login-box button {
-  margin-top: 15px;
-  background-color: #d83315;
-  color: #fff;
-  border: none;
-  border-radius: 20px;
-  padding: 10px 35px;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-.login-box button:hover {
-  background-color: #ff3b1a;
-}
-
-/* side */
-.panel {
-  width: 50%;
-  background: linear-gradient(to right, #f33d68, #f94222);
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 30px;
-}
-
-.panel h2 {
-  font-size: 26px;
-  margin-bottom: 10px;
-}
-
-.panel p {
-  width: 70%;
-  font-size: 14px;
-  margin-bottom: 20px;
-}
-
-/* switch button for signup */
-.panel .switch-btn {
-  border: 1px solid #fff;
-  background-color: transparent;
-  color: #fff;
-  border-radius: 25px;
-  padding: 10px 35px;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-.panel .switch-btn:hover {
-  background-color: #fff;
-  color: #fd4322;
-}
-
-/* layout signup */
-.signup {
-  width: 900px;
-  height: 500px;
-  margin: 50px auto;
-  display: flex;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-}
-
-.signup .panel {
-  width: 50%;
+body {
   background: linear-gradient(to right, #ff416c, #ff4b2b);
-  color: #fff;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.overlay {
+  position: fixed;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  text-align: center;
-  padding: 30px;
-}
-
-.signup .panel h2 {
-  font-size: 26px;
-  margin-bottom: 10px;
-}
-
-.signup .panel p {
-  width: 70%;
-  font-size: 14px;
-  margin-bottom: 20px;
-}
-
-/* switch button for login */
-.signup .panel .switch-btn {
-  border: 1px solid #fff;
-  background-color: transparent;
-  color: #fff;
-  border-radius: 25px;
-  padding: 10px 35px;
-  cursor: pointer;
+  align-items: center;
+  width: 400px;
+  height: 550px;
+  background-image: url("image/2.png");
+  background-position: center;
+  background-size: 630px;
+  z-index: 1;
+  border-radius: 10px;
+  visibility: hidden;
   transition: 0.3s ease;
 }
 
-.signup .panel .switch-btn:hover {
-  background-color: #fff;
-  color: #ff4b2b;
-}
-
-/*(right side on signup page) */
-.signup-box {
-  width: 50%;
-  padding: 40px 20px;
+.overlay2 {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  position: fixed;
   justify-content: center;
-}
-
-.signup-box h2 {
-  font-size: 28px;
-  color: #222;
-  margin-bottom: 15px;
-}
-
-.signup-box p {
-  color: #777;
-  font-size: 13px;
-  margin: 10px 0;
-}
-
-/* input */
-.signup-box input {
-  width: 80%;
-  padding: 10px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 5px;
-  background-color: #f1f1f1;
-  font-size: 14px;
-}
-
-.signup-box button {
-  margin-top: 15px;
-  background-color: #ff4b2b;
-  color: #fff;
-  border: none;
-  border-radius: 20px;
-  padding: 10px 35px;
-  cursor: pointer;
+  align-items: center;
+  width: 500px;
+  height: 550px;
+  background-image: url("image/3.png");
+  background-position: center;
+  background-size: 500px;
+  z-index: 1;
+  border-radius: 10px;
+  visibility: visible;
   transition: 0.3s ease;
 }
 
-.signup-box button:hover {
-  background-color: #ff3b1a;
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  gap: 10px;
+}
+
+input[type="text"]::placeholder,
+input[type="password"]::placeholder,
+input[type="email"]::placeholder,
+input[type="number"]::placeholder {
+  font-size: 10px;
+  color: rgba(133, 132, 132, 0.877);
+}
+
+.active {
+  scale: 2;
+}
+
+.passive {
+  scale: 1;
 }
