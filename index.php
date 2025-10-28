@@ -6,9 +6,7 @@
   <title>Document</title>
 </head>
 <body>
-<?php
-include 'signin.php';
-include 'login.php';
-?>
+
+
 </body>
 </html>

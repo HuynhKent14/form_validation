@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
     <title>Document</title>
     <link rel="stylesheet" href="login.css">
 </head>
 <body>
     <form id="login">
-        <h1>Log in</h1>
-        <label>Username</label>
-        <input type="text" id="username" placeholder="Type your username"></input> <br>
-        <label>Password</label>
-        <input type="password" id="password" minlength="6" placeholder="Type your password">
+        <div class="login-box">
+            <h2>Login</h2>
+        <input type="text" id="username" class="username" placeholder="Username"><br>
+        <input type="password" id="password" class="password" minlength="6" placeholder="Password"><br>
         <span></span>
-        <br><a href="">Forgot Your Password?</a><br>
-        <div> <input type="submit" value="Submit"></div>
-       
+        <a href="">Forgot Your Password?</a><br>
+        <input type="submit" value="Submit">
+        </div>       
     </form>
 </body>
 
