@@ -6,11 +6,6 @@
   <title>Document</title>
 </head>
 <body>
-  example, gagawan ko ng update to   
 
-
-  <form action="">
-    fawefaewfeaw
-  </form>
 </body>
 </html>

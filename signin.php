@@ -7,23 +7,24 @@
 </head>
 <body>
 
-    <form>
-        <label>First Name</label>
-        <input type="text" id="Fname" pattern="[A-Za-z]+" required></input>
-        <label>Last Name</label>
-        <input type="text" id="Lname" pattern="[A-Za-z]+" required></input>
+    <form id="signup">
+        <label>Username</label>
+        <input type="text" id="userName" pattern="[A-Za-z]+" ></input><br>
         <label>Email</label>
-        <input type="email" id="userEmail" required></input>
+        <input type="email" id="userEmail" ></input><br>
         <label>Phone Number</label>
-        <input type="number" id="userNumber" pattern="[0-9]+" maxlength="11" required></input>
+        <input type="number" id="userNumber" pattern="[0-9]+" maxlength="11" ></input><br>
         <label>Password</label>
-        <input type="password" id="userPass" minlength="6" required></input>
+        <input type="password" id="userPass" minlength="6" ></input><br>
+        <span id="notice1"></span>
         <label>Confirm Password</label>
-        <input type="password" id="userConfirmPass" minlength="6" required></input> 
+        <input type="password" id="userConfirmPass" minlength="6" ></input> <br>
+        <span id="notice2"></span>
         <button type="submit">Submit</button> <br>
         <a href="">Already have an account?</a> <br>
 
     </form>
-    
 </body>
+
+<script src="signin.js"></script>
 </html>
