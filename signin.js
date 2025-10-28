@@ -18,7 +18,6 @@ document.getElementById("userPass").onkeyup = function () {
   } else if (this.value.length < 6) {
     document.getElementById("notice1").innerHTML =
       "Password must be at least 6 characters long. <br>";
-    document.getElementById("notice1").style.color = "red";
   } else {
     document.getElementById("notice1").innerHTML = "";
   }
@@ -29,7 +28,6 @@ document.getElementById("userPass").onkeyup = function () {
   ) {
     document.getElementById("notice2").innerHTML =
       "Passwords do not match. <br>";
-    document.getElementById("notice2").style.color = "red";
   } else {
     document.getElementById("notice2").innerHTML = "";
   }
@@ -39,7 +37,6 @@ document.getElementById("userConfirmPass").onkeyup = function () {
   if (this.value !== document.getElementById("userPass").value) {
     document.getElementById("notice2").innerHTML =
       "Passwords do not match. <br>";
-    document.getElementById("notice2").style.color = "red";
   } else {
     document.getElementById("notice2").innerHTML = "";
   }

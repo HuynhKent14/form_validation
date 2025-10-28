@@ -14,8 +14,7 @@ document.getElementById("password").onkeyup = function () {
     document.getElementById("password").style.borderColor = "black";
   } else if (this.value.length < 6) {
     document.querySelector("span").innerHTML =
-      "Password must be at least 6 characters long. <br>";
-    document.querySelector("span").style.color = "red";
+      "Password must be at least 6 characters long.";
   } else {
     document.querySelector("span").innerHTML = "";
   }
