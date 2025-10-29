@@ -9,6 +9,16 @@ document.getElementById("signup").onsubmit = function (e) {
     alert("Please fill out the neccessary fields.");
     e.preventDefault();
   }
+
+  if (document.getElementById("userPass").value.length < 6) {
+    alert("Password must be at least 6 characters long.");
+    e.preventDefault();
+  }
+
+  if (document.getElementById("userNumber").value.length < 11) {
+    alert("Phone number must be 11 digits long.");
+    e.preventDefault();
+  }
 };
 
 document.getElementById("userPass").onkeyup = function () {

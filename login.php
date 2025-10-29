@@ -16,7 +16,7 @@
             <input type="text" id="username" class="username" placeholder="Type your username"><br>
 
             <label> Password</label>
-            <input type="password" id="password" class="password" minlength="6" placeholder="Type your Password">
+            <input type="password" id="password" class="password" placeholder="Type your Password">
             <span></span>
             <a href="">Forgot Your Password?</a>
             <input type="submit" value="Submit"> <br>
