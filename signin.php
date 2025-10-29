@@ -11,20 +11,20 @@
     <form id="signup" class="signup-box">
          <h2>Sign Up</h2>
         <label> Username</label>
-        <input type="text" id="userName" class="signin" pattern="[A-Za-z]+" placeholder="e.g. JohnDoe">
+        <input type="text" id="userName" class="signin" placeholder="e.g. JohnDoe2">
 
         <label> Email</label>
         <input type="email" id="userEmail" class="signin" placeholder="e.g. username@gmail.com ">
 
         <label> Phone Number</label>
-        <input type="tel" id="userNumber" class="signin" pattern="[0-9]+" placeholder="e.g. 09xxxxxxxxx">
+        <input type="tel" id="userNumber" class="signin" pattern="[0-9]+" minlength="11" maxlength="11" placeholder="e.g. 09xxxxxxxxx">
 
         <label> Password</label>
-        <input type="password" id="userPass" class="signin" placeholder="Minimum 6 characters">
+        <input type="password" id="userPass" class="signin" minlength="6" placeholder="Minimum 6 characters">
         <span id="notice1"></span>
 
         <label> Confirm Password</label>
-        <input type="password" id="userConfirmPass" class="signin" placeholder="Confirm Password">
+        <input type="password" id="userConfirmPass" class="signin" minlength="6" placeholder="Confirm Password">
         <span id="notice2"></span>
 
         <button type="submit" class="signup-button">Submit</button><br>

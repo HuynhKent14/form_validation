@@ -47,7 +47,7 @@ body {
 input[type="text"]::placeholder,
 input[type="password"]::placeholder,
 input[type="email"]::placeholder,
-input[type="number"]::placeholder {
+input[type="tel"]::placeholder {
   font-size: 10px;
   color: rgba(133, 132, 132, 0.877);
 }

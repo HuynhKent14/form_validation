@@ -9,16 +9,6 @@ document.getElementById("signup").onsubmit = function (e) {
     alert("Please fill out the neccessary fields.");
     e.preventDefault();
   }
-
-  if (document.getElementById("userPass").value.length < 6) {
-    alert("Password must be at least 6 characters long.");
-    e.preventDefault();
-  }
-
-  if (document.getElementById("userNumber").value.length < 11) {
-    alert("Phone number must be 11 digits long.");
-    e.preventDefault();
-  }
 };
 
 document.getElementById("userPass").onkeyup = function () {
@@ -27,7 +17,7 @@ document.getElementById("userPass").onkeyup = function () {
     document.getElementById("password").style.borderColor = "black";
   } else if (this.value.length < 6) {
     document.getElementById("notice1").innerHTML =
-      "Password must be at least 6 characters long. <br>";
+      "Password must be at least 6 characters long. <br> <br>";
   } else {
     document.getElementById("notice1").innerHTML = "";
   }
