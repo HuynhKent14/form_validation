@@ -6,11 +6,6 @@ document.getElementById("login").onsubmit = function (e) {
     alert("Please fill out the neccessary fields.");
     e.preventDefault();
   }
-
-  if (document.getElementById("password").value.length < 6) {
-    alert("Password must be at least 6 characters long.");
-    e.preventDefault();
-  }
 };
 
 document.getElementById("password").onkeyup = function () {
@@ -21,5 +16,13 @@ document.getElementById("password").onkeyup = function () {
       "Password must be at least 6 characters long.";
   } else {
     document.querySelector("span").innerHTML = "";
+  }
+};
+
+document.getElementById("check-pass").onclick = function () {
+  if (this.checked) {
+    document.getElementById("password").type = "text";
+  } else {
+    document.getElementById("password").type = "password";
   }
 };

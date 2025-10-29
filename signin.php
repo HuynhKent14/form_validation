@@ -27,6 +27,11 @@
         <input type="password" id="userConfirmPass" class="signin" minlength="6" placeholder="Confirm Password">
         <span id="notice2"></span>
 
+        <div class="check-container">
+                <input type="checkbox" id="check-pass2" class="check-pass2" onclick="showPassword()"> 
+                <label for="check-pass2"> Show Password</label>
+            </div>
+
         <button type="submit" class="signup-button">Submit</button><br>
         <a class="login-link" onclick="toggleForms(2)">Already have an account?</a><br>
 

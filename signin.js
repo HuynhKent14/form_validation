@@ -9,6 +9,14 @@ document.getElementById("signup").onsubmit = function (e) {
     alert("Please fill out the neccessary fields.");
     e.preventDefault();
   }
+
+  if (
+    document.getElementById("userPass").value !==
+    document.getElementById("userConfirmPass").value
+  ) {
+    alert("Passwords do not match.");
+    e.preventDefault();
+  }
 };
 
 document.getElementById("userPass").onkeyup = function () {
@@ -39,5 +47,15 @@ document.getElementById("userConfirmPass").onkeyup = function () {
       "Passwords do not match. <br>";
   } else {
     document.getElementById("notice2").innerHTML = "";
+  }
+};
+
+document.getElementById("check-pass2").onclick = function () {
+  if (this.checked) {
+    document.getElementById("userPass").type = "text";
+    document.getElementById("userConfirmPass").type = "text";
+  } else {
+    document.getElementById("userPass").type = "password";
+    document.getElementById("userConfirmPass").type = "password";
   }
 };

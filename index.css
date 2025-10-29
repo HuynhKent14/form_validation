@@ -52,10 +52,21 @@ input[type="tel"]::placeholder {
   color: rgba(133, 132, 132, 0.877);
 }
 
-.active {
-  scale: 2;
+input[type="checkbox"] {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
 }
 
-.passive {
-  scale: 1;
+.check-container {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  width: 63%;
+}
+
+.check-container label {
+  width: auto;
+  font-size: 15px;
 }

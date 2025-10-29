@@ -16,7 +16,12 @@
             <input type="text" id="username" class="username" placeholder="Type your username"><br>
 
             <label> Password</label>
-            <input type="password" id="password" class="password" placeholder="Type your Password">
+            <input type="password" id="password" class="password" minlength="6" placeholder="Type your Password">
+            <div class="check-container">
+                <input type="checkbox" id="check-pass" class="check-pass" onclick="showPassword()"> 
+                <label for="check-pass"> Show Password</label>
+            </div>
+            <br>            
             <span></span>
             <a href="">Forgot Your Password?</a>
             <input type="submit" value="Submit"> <br>
