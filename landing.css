@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  background-color: rgb(20, 19, 19);
+  font-family: "Inter";
+  height: 1300px;
+}
+
+.upper-container {
+  width: 100%;
+  height: 320px;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0) 0%,
+      rgb(20, 19, 19) 100%
+    ),
+    url(images/header.jpg);
+  background-size: 100%;
+  background-position: 0px 20%;
+  background-repeat: no-repeat;
+}
+
+.upper-container button {
+  position: absolute;
+  right: 80px;
+  top: 30px;
+  background-color: transparent;
+  background-image: url(images/menu.png);
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  outline: none;
+  border: none;
+}
+
+.bottom-container {
+  display: flex;
+  width: 90%;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  height: 200px;
+}
+
+.header .preview {
+  position: relative;
+  height: 100%;
+  width: 500px;
+  color: white;
+}
+
+.preview .stars {
+  font-size: 40px;
+  position: absolute;
+  top: -30px;
+}
+
+.preview .prev-title {
+  font-size: 30px;
+}
+
+.preview .prev-title h1 {
+  margin: 20px 0 0 0;
+}
+
+.movie-info h3 {
+  display: inline;
+  font-weight: 300;
+}
+
+.movie-info h4 {
+  margin-top: 5px;
+  font-weight: 100;
+}
+
+.movie-info a {
+  text-decoration: none;
+  color: rgb(15, 131, 77);
+}
+
+.header .title {
+  font-family: "Lora";
+  color: white;
+  height: 100%;
+  width: 650px;
+  font-size: 120px;
+  text-align: end;
+}
+
+.movies {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 30px;
+  height: 650px;
+  margin-top: 50px;
+}
+
+.movie-card1 {
+  width: 550px;
+  height: 100%;
+  background-image: url(images/a.jpg);
+  background-size: cover;
+}
+
+.movie-card2 {
+  width: 550px;
+  height: 100%;
+  background-image: url(images/b.jpg);
+  background-size: cover;
+}
+
+.movie-card3 {
+  height: 100%;
+  width: 550px;
+  background-image: url(images/c.jpg);
+  background-size: cover;
+}

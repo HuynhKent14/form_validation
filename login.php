@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="login.css">
 </head>
+
 <body>
 
     <form id="login">
@@ -18,17 +20,18 @@
             <label> Password</label>
             <input type="password" id="password" class="password" minlength="6" placeholder="Type your Password">
             <div class="check-container">
-                <input type="checkbox" id="check-pass" class="check-pass" onclick="showPassword()"> 
+                <input type="checkbox" id="check-pass" class="check-pass" onclick="showPassword()">
                 <label for="check-pass"> Show Password</label>
             </div>
-            <br>            
+            <br>
             <span></span>
             <a href="">Forgot Your Password?</a>
             <input type="submit" value="Submit"> <br>
             <a onclick=toggleForms(1)>Doesn't have an account?</a>
-        </div>       
+        </div>
     </form>
 </body>
 
 <script src="login.js"></script>
+
 </html>
