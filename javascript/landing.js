@@ -2,7 +2,7 @@ const overlay = document.querySelector(".overlay");
 
 function toggleOverlay() {
   overlay.style.opacity = "1";
-  overlay.style.visibility = "initial";
+  overlay.style.visibility = "visible";
 }
 
 function toggleExit() {
