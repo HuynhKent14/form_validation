@@ -27,7 +27,7 @@ body {
   align-items: center;
   width: 500px;
   height: 550px;
-  background-image: url("3.png");
+  background-image: url("../images/");
   background-position: center;
   background-size: 500px;
   z-index: 1;

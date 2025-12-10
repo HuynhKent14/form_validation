@@ -11,7 +11,24 @@
 <body>
 
   <div class="upper-container">
-    <button></button>
+    <button onclick="toggleOverlay()"></button>
+    <!--Overlay for menu-->
+    <div class="overlay">
+      <span class="closebtn" onclick="toggleExit()">x</span>
+      <div class="profile">
+        <img src="images/d.jpg">
+        <h4>Usada Pekora</h4>
+
+      </div>
+      <hr style="color:red; width:60%;">
+      <div class="options">
+        <ul>
+          <li><a href="">Home</a></li>
+          <li><a href="">Dashboard</a></li>
+          <li><a href="" style="color:rgb(128, 32, 32);">Log Out</a></li>
+        </ul>
+      </div>
+    </div>
   </div>
   <div class="bottom-container">
     <div class="header">
@@ -38,5 +55,6 @@
   </div>
 
 </body>
+<script src="javascript/landing.js"></script>
 
 </html>
