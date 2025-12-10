@@ -6,7 +6,7 @@ body {
   margin: 0;
   background-color: rgb(20, 19, 19);
   font-family: "Inter";
-  height: 1300px;
+  height: 1000px;
 }
 
 .upper-container {
@@ -17,7 +17,7 @@ body {
       rgba(255, 255, 255, 0) 0%,
       rgb(20, 19, 19) 100%
     ),
-    url(images/header.jpg);
+    url(../images/header.jpg);
   background-size: 100%;
   background-position: 0px 20%;
   background-repeat: no-repeat;
@@ -99,27 +99,41 @@ body {
   flex-direction: row;
   justify-content: center;
   gap: 30px;
-  height: 650px;
+  height: 360px;
   margin-top: 50px;
 }
 
 .movie-card1 {
-  width: 550px;
+  width: 270px;
   height: 100%;
-  background-image: url(images/a.jpg);
-  background-size: cover;
+  background-image: url(../images/a.jpg);
+  background-size: 260px;
 }
 
 .movie-card2 {
-  width: 550px;
+  width: 270px;
   height: 100%;
-  background-image: url(images/b.jpg);
-  background-size: cover;
+  background-image: url(../images/b.jpg);
+  background-size: 260px;
 }
 
 .movie-card3 {
   height: 100%;
-  width: 550px;
-  background-image: url(images/c.jpg);
-  background-size: cover;
+  width: 270px;
+  background-image: url(../images/c.jpg);
+  background-size: 260px;
+}
+
+.movie-card4 {
+  height: 100%;
+  width: 270px;
+  background-image: url(../images/e.jpg);
+  background-size: 260px;
+}
+
+.movie-card5 {
+  height: 100%;
+  width: 270px;
+  background-image: url(../images/f.jpg);
+  background-size: 260px;
 }

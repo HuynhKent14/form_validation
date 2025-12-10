@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Le Critique</title>
-  <link rel="stylesheet" href="landing.css">
+  <link rel="stylesheet" href="css/landing.css">
 </head>
 
 <body>
@@ -32,6 +32,8 @@
       <div class="movie-card1"></div>
       <div class="movie-card2"></div>
       <div class="movie-card3"></div>
+      <div class="movie-card4"></div>
+      <div class="movie-card5"></div>
     </div>
   </div>
 
