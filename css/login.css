@@ -4,10 +4,11 @@
   justify-content: center;
   align-items: center;
   width: 400px;
-  height: 550px;
+  height: 600px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
+  background-image: url(../images/strip.png);
+  background-size: 100% 100%;
 }
 label {
   width: 60%;
@@ -29,7 +30,7 @@ input[type="submit"] {
   width: 270px;
   height: 40px;
   margin-top: 15px;
-  background-color: #ff4b2b;
+  background-color: #62110b;
   color: white;
   border: none;
   border-radius: 20px;
@@ -39,7 +40,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-  background-color: #ff6a3d;
+  background-color: #8f251d;
 }
 
 a {

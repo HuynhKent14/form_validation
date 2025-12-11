@@ -1,5 +1,5 @@
 body {
-  background: linear-gradient(to right, #ff416c, #ff4b2b);
+  background: rgb(20, 19, 19);
   margin: 0;
   font-family: Arial, sans-serif;
 }
@@ -10,10 +10,9 @@ body {
   justify-content: center;
   align-items: center;
   width: 400px;
-  height: 550px;
-  background-image: url("2.png");
-  background-position: center;
-  background-size: 630px;
+  height: 600px;
+  background-image: url("../images/signin.png");
+  background-size: 100% 100%;
   z-index: 1;
   border-radius: 10px;
   visibility: hidden;
@@ -26,10 +25,9 @@ body {
   justify-content: center;
   align-items: center;
   width: 500px;
-  height: 550px;
-  background-image: url("../images/");
-  background-position: center;
-  background-size: 500px;
+  height: 600px;
+  background-image: url("../images/login.png");
+  background-size: 100% 100%;
   z-index: 1;
   border-radius: 10px;
   visibility: visible;

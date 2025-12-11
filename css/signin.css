@@ -1,13 +1,15 @@
 .signup-box {
   background-color: #fff;
   width: 500px;
-  height: 550px;
+  height: 600px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  background-image: url(../images/strip2.png);
+  background-size: 100% 100%;
 }
 
 .signin {
@@ -28,7 +30,7 @@ button {
   width: 270px;
   height: 40px;
   margin-top: 15px;
-  background-color: #ff4b2b;
+  background-color: #62110b;
   color: white;
   border: none;
   border-radius: 20px;
@@ -39,7 +41,7 @@ button {
 
 .signup-button:hover,
 button:hover {
-  background-color: #ff6a3d;
+  background-color: #8f251d;
 }
 
 .login-link,

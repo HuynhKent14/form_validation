@@ -18,9 +18,6 @@
         <label> Email</label>
         <input type="email" id="userEmail" class="signin" placeholder="e.g. username@gmail.com ">
 
-        <label> Phone Number</label>
-        <input type="tel" id="userNumber" class="signin" pattern="[0-9]+" minlength="11" maxlength="11" placeholder="e.g. 09xxxxxxxxx">
-
         <label> Password</label>
         <input type="password" id="userPass" class="signin" minlength="6" placeholder="Minimum 6 characters">
         <span id="notice1"></span>
