@@ -25,7 +25,7 @@
         <ul>
           <li><a href="">Home</a></li>
           <li><a href="">Dashboard</a></li>
-          <li><a href="" style="color:rgb(128, 32, 32);">Log Out</a></li>
+          <li><a href="logout.php" style="color:rgb(128, 32, 32);">Log Out</a></li>
         </ul>
       </div>
     </div>
