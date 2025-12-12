@@ -176,34 +176,34 @@ body {
 .movie-card1 {
   width: 270px;
   height: 100%;
-  background-image: url(../images/a.jpg);
+  background-image: url(../images/movie1.png);
   background-size: 260px;
 }
 
 .movie-card2 {
   width: 270px;
   height: 100%;
-  background-image: url(../images/b.jpg);
+  background-image: url(../images/movie2.jpg);
   background-size: 260px;
 }
 
 .movie-card3 {
   height: 100%;
   width: 270px;
-  background-image: url(../images/c.jpg);
+  background-image: url(../images/movie3.jpg);
   background-size: 260px;
 }
 
 .movie-card4 {
   height: 100%;
   width: 270px;
-  background-image: url(../images/e.jpg);
+  background-image: url(../images/movie4.jpg);
   background-size: 260px;
 }
 
 .movie-card5 {
   height: 100%;
   width: 270px;
-  background-image: url(../images/f.jpg);
+  background-image: url(../images/movie5.png);
   background-size: 260px;
 }

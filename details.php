@@ -20,11 +20,11 @@
 
       <div class="movieDetails">
         <div class="movieImage">
-          <img src="movieImage.jpg" alt="">
+          <img src="images/movieImage.jpg" alt="">
         </div>
 
         <div class="movieInfo">
-          <img class="ratings" src="starImage.png" alt="">
+          <img class="ratings" src="images/starImage.png" alt="">
           <div class="movieTitle">Kimetsu No Yaiba</div>
 
           <div class="movieDirector">
@@ -49,11 +49,11 @@
         <div class="commentBox">
           <input type="text" placeholder="Write a comment">
         </div>
-        <img class="commentIcon" src="commentIcon.png" alt="">
+        <img class="commentIcon" src="images/commentIcon.png" alt="">
       </div>
 
       <div class="userComment">
-        <img class="userPfp" src="userPfp.jpg" alt="">
+        <img class="userPfp" src="images/userPfp.jpg" alt="">
         <div class="commentDetails">
           <div class="userName">SenpaiDaisuki_20</div>
           <div class="commentDate">12/8/2025</div>
