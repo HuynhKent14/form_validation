@@ -13,7 +13,7 @@ class Auth
     // LOGIN FUNCTION
     public function login($username, $password)
     {
-        $stmt = $this->conn->prepare("SELECT * FROM users WHERE username = ?");
+        $stmt = $this->conn->prepare("SELECT * FROM accounts WHERE username = ?");
         $stmt->execute([$username]);
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -35,7 +35,7 @@ class Auth
     public function register($email, $username, $password)
     {
         // Check if username already exists
-        $stmt = $this->conn->prepare("SELECT * FROM users WHERE username = ?");
+        $stmt = $this->conn->prepare("SELECT * FROM accounts WHERE username = ?");
         $stmt->execute([$username]);
 
         if ($stmt->fetch()) {
