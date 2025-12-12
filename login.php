@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="login.css">
-    <title>Document</title>
+    <title>Log In</title>
     <link rel="stylesheet" href="css/login.css">
 </head>
 
@@ -25,7 +24,7 @@
             </div>
             <br>
             <span></span>
-            <a href="">Forgot Your Password?</a>
+            <a class="visitor">Proceed As Visitor?</a>
             <input type="submit" value="Submit"> <br>
             <a onclick=toggleForms(1)>Doesn't have an account?</a>
         </div>
