@@ -2,12 +2,6 @@
 require_once "Auth.php";
 $auth = new Auth();
 
-// if already logged in dashboard
-if ($auth->isLoggedIn()) {
-    header("Location: index.php");
-    exit;
-}
-
 $error = "";
 
 if (isset($_POST['login'])) {

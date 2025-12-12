@@ -1,3 +1,10 @@
+<?php
+require_once "auth.php";
+$auth = new Auth();
+
+$username = $_SESSION['username'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,7 +24,7 @@
       <span class="closebtn" onclick="toggleExit()">x</span>
       <div class="profile">
         <img src="images/d.jpg">
-        <h4>Usada Pekora</h4>
+        <h4><?php echo $username; ?></h4>
 
       </div>
       <hr style="color:red; width:60%;">

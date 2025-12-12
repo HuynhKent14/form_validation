@@ -1,3 +1,29 @@
+<?php
+require_once "Auth.php";
+$auth = new Auth();
+
+$message = "";
+
+if (isset($_POST['register'])) {
+    $username = trim($_POST['username']);
+    $email    = trim($_POST['email']);
+    $password = trim($_POST['password']);
+    $confirm  = trim($_POST['confirm']);
+
+    if ($password !== $confirm) {
+        $message = "Passwords do not match!";
+    } else {
+        $result = $auth->register($email, $username, $password);
+
+        if ($result === true) {
+            header("Location: index.php");
+            exit;
+        } else {
+            $message = $result;  // e.g. "Username already taken"
+        }
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,20 +36,25 @@
 
 <body>
 
-    <form id="signup" class="signup-box">
+    <form id="signup" class="signup-box" method="POST" action="">
         <h2>Sign Up</h2>
-        <label> Username</label>
-        <input type="text" id="userName" class="signin" placeholder="e.g. JohnDoe2">
 
-        <label> Email</label>
-        <input type="email" id="userEmail" class="signin" placeholder="e.g. username@gmail.com ">
+        <?php if ($message): ?>
+            <p style="color:red;"><?php echo htmlspecialchars($message); ?></p>
+        <?php endif; ?>
 
-        <label> Password</label>
-        <input type="password" id="userPass" class="signin" minlength="6" placeholder="Minimum 6 characters">
+        <label>Username</label>
+        <input type="text" name="username" id="userName" class="signin" placeholder="e.g. JohnDoe2" required>
+
+        <label>Email</label>
+        <input type="email" name="email" id="userEmail" class="signin" placeholder="e.g. username@gmail.com" required>
+
+        <label>Password</label>
+        <input type="password" name="password" id="userPass" class="signin" minlength="6" placeholder="Minimum 6 characters" required>
         <span id="notice1"></span>
 
-        <label> Confirm Password</label>
-        <input type="password" id="userConfirmPass" class="signin" minlength="6" placeholder="Confirm Password">
+        <label>Confirm Password</label>
+        <input type="password" name="confirm" id="userConfirmPass" class="signin" minlength="6" placeholder="Confirm Password" required>
         <span id="notice2"></span>
 
         <div class="check-container">
@@ -31,7 +62,7 @@
             <label for="check-pass2"> Show Password</label>
         </div>
 
-        <button type="submit" class="signup-button">Submit</button><br>
+        <button type="submit" name="register" class="signup-button">Submit</button><br>
         <a class="login-link" onclick="toggleForms(2)">Already have an account?</a><br>
 
     </form>

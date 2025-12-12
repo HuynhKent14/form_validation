@@ -5,10 +5,15 @@ class Auth
 {
     private $conn;
     public function __construct()
-    {
+{
+    // Start session only if none exists
+    if (session_status() === PHP_SESSION_NONE) {
         session_start();
-        $this->conn = (new Database())->connect();
     }
+
+    // Connect to database
+    $this->conn = (new Database())->connect();
+}
 
     // LOGIN FUNCTION
     public function login($username, $password)
@@ -51,6 +56,8 @@ class Auth
 
         return true;
     }
+
+    
 
     // LOGOUT FUNCTION
     public function logout()
