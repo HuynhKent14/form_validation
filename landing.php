@@ -42,7 +42,7 @@ $username = $isGuest
 
           <!-- if admin -->
           <?php if ($isAdmin): ?>
-            <li><a href="dashboard.php">Dashboard</a></li>
+            <li><a href="admin.php">Dashboard</a></li>
           <?php endif; ?>
 
           <!-- guest or logged in -->
