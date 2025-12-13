@@ -38,7 +38,7 @@ $username = $isGuest
       <hr style="color:red; width:60%;">
       <div class="options">
         <ul>
-          <li><a href="">Home</a></li>
+          <li><a href="landing.php">Home</a></li>
 
           <!-- if admin -->
           <?php if ($isAdmin): ?>
