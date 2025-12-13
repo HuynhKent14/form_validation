@@ -39,31 +39,31 @@ $username = $isGuest
       <button onclick="toggleOverlay()"></button>
       <!--Overlay for menu-->
       <div class="overlay">
-      <span class="closebtn" onclick="toggleExit()">x</span>
-      <div class="profile">
-        <img src="images/d.jpg">
-        <h4><?= htmlspecialchars($username ?: 'Guest', ENT_QUOTES, 'UTF-8') ?></h4>
+        <span class="closebtn" onclick="toggleExit()">x</span>
+        <div class="profile">
+          <img src="images/d.jpg">
+          <h4><?= htmlspecialchars($username ?: 'Guest', ENT_QUOTES, 'UTF-8') ?></h4>
 
+        </div>
+        <hr style="color:red; width:60%;">
+        <div class="options">
+          <ul>
+            <li><a href="landing.php">Home</a></li>
+
+            <!-- if admin -->
+            <?php if ($isAdmin): ?>
+              <li><a href="admin.php">Dashboard</a></li>
+            <?php endif; ?>
+
+            <!-- guest or logged in -->
+            <?php if ($isGuest || !$isLoggedIn): ?>
+              <li><a href="index.php" style="color:rgba(44, 41, 199, 1); font-weight:700;">Sign In</a></li>
+            <?php else: ?>
+              <li><a href="logout.php" style="color:rgb(128, 32, 32); font-weight:700;">Log Out</a></li>
+            <?php endif; ?>
+          </ul>
+        </div>
       </div>
-      <hr style="color:red; width:60%;">
-      <div class="options">
-        <ul>
-          <li><a href="landing.php">Home</a></li>
-
-          <!-- if admin -->
-          <?php if ($isAdmin): ?>
-            <li><a href="admin.php">Dashboard</a></li>
-          <?php endif; ?>
-
-          <!-- guest or logged in -->
-          <?php if ($isGuest || !$isLoggedIn): ?>
-            <li><a href="index.php">Sign In</a></li>
-          <?php else: ?>
-            <li><a href="logout.php" style="color:rgb(128, 32, 32);">Log Out</a></li>
-          <?php endif; ?>
-        </ul>
-      </div>
-    </div>
     </div>
   </header>
   <hr style="width:90%;">
@@ -71,14 +71,12 @@ $username = $isGuest
     <h1 class="dashboard-title">Account List</h1>
   </div>
   <table class="account-table">
-    <th>
-      <tr>
-        <th>ID</th>
-        <th>Email</th>
-        <th>Username</th>
-        <th>Access Level</th>
-      </tr>
-    </th>
+    <tr>
+      <th>ID</th>
+      <th>Email</th>
+      <th>Username</th>
+      <th>Access Level</th>
+    </tr>
     <tb>
       <?php foreach ($accounts as $acc): ?>
         <tr>

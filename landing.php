@@ -47,9 +47,9 @@ $username = $isGuest
 
           <!-- guest or logged in -->
           <?php if ($isGuest || !$isLoggedIn): ?>
-            <li><a href="index.php">Sign In</a></li>
+            <li><a href="index.php" style="color:rgba(44, 41, 199, 1); font-weight:700;">Sign In</a></li>
           <?php else: ?>
-            <li><a href="logout.php" style="color:rgb(128, 32, 32);">Log Out</a></li>
+            <li><a href="logout.php" style="color:rgb(128, 32, 32); font-weight:700;">Log Out</a></li>
           <?php endif; ?>
         </ul>
       </div>
