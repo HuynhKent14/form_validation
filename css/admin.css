@@ -114,3 +114,25 @@ header h1 {
   flex-direction: column;
   color: white;
 }
+
+.account-table {
+  width: 90%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  color: white;
+}
+
+.account-table th,
+.account-table td {
+  border: 1px solid;
+  padding: 10px;
+  text-align: center;
+}
+
+.account-table th {
+  background-color: #802020;
+}
+
+.account-table tr:nth-child(even) {
+  background-color: #2a2a2a;
+}

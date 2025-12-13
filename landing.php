@@ -65,7 +65,7 @@ $username = $isGuest
         <div class="movie-info">
           <h3>Director: Kent Kaneki</h3>
           <h4>2023</h4>
-          <a href="">go to reviews →</a>
+          <a href="details.php?id=6">go to reviews →</a>
         </div>
       </div>
       <div class="title">Le Critique</div>
