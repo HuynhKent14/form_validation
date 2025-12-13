@@ -78,6 +78,7 @@ body {
 
 .profile h4 {
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .overlay .options {
@@ -108,7 +109,7 @@ body {
 
 .bottom-container {
   display: flex;
-  width: 90%;
+  width: 77%;
   flex-direction: column;
   box-sizing: border-box;
 }

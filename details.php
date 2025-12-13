@@ -3,9 +3,11 @@ require_once "Auth.php";
 $auth = new Auth();
 $conn = (new Database())->connect();
 
-// Guest or logged in detector
+// Admin, Guest, or logged in detector
 $isGuest = isset($_SESSION['guest']) && $_SESSION['guest'] === true;
 $username = $isGuest ? 'Guest' : ($_SESSION['username'] ?? '');
+$isLoggedIn = $auth->isLoggedIn();
+$isAdmin = $isLoggedIn && isset($_SESSION['level']) && $_SESSION['level'] == 1;
 
 // Get movie ID
 if (!isset($_GET['id'])) {
@@ -62,7 +64,37 @@ $reviews = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <div class="topCon">
       <div class="upperCon">
         <div class="siteTitle">Le Critique </div>
-        <img class="dashIcon" src="dashIcon.png" alt="">
+
+        <div class="menu-container">
+          <button onclick="toggleOverlay()"></button>
+          <!--Overlay for menu-->
+          <div class="overlay">
+            <span class="closebtn" onclick="toggleExit()">x</span>
+            <div class="profile">
+              <img src="images/d.jpg">
+              <h4><?= htmlspecialchars($username ?: 'Guest', ENT_QUOTES, 'UTF-8') ?></h4>
+
+            </div>
+            <hr style="color:red; width:60%;">
+            <div class="options">
+              <ul>
+                <li><a href="">Home</a></li>
+
+                <!-- if admin -->
+                <?php if ($isAdmin): ?>
+                  <li><a href="admin.php">Dashboard</a></li>
+                <?php endif; ?>
+
+                <!-- guest or logged in -->
+                <?php if ($isGuest || !$isLoggedIn): ?>
+                  <li><a href="index.php">Sign In</a></li>
+                <?php else: ?>
+                  <li><a href="logout.php" style="color:rgb(128, 32, 32);">Log Out</a></li>
+                <?php endif; ?>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
 
 
@@ -98,7 +130,7 @@ $reviews = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <div class="commentBox">
               <input type="text" name="comment" maxlength="255" placeholder="Write a comment" required>
             </div>
-            <button type="submit">
+            <button class="commentButton" type="submit">
               <img class="commentIcon" src="images/commentIcon.png" alt="Submit Comment">
             </button>
           </form>
@@ -126,5 +158,6 @@ $reviews = $stmt->fetchAll(PDO::FETCH_ASSOC);
   </div>
 
 </body>
+<script src="javascript/landing.js"></script>
 
 </html>
