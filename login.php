@@ -9,6 +9,9 @@ if (isset($_POST['login'])) {
     $password = trim($_POST['password']);
 
     if ($auth->login($username, $password)) {
+        // Clear guest mode if previously set
+        unset($_SESSION['guest']);
+
         header("Location: landing.php");
         exit;
     } else {
@@ -48,7 +51,7 @@ if (isset($_POST['login'])) {
             </div>
             <br>
 
-            <a class="visitor" href="index.php">Proceed As Visitor?</a>
+            <a class="visitor" href="guest.php">Proceed As Visitor?</a>
             <br><br>
 
             <input type="submit" name="login" value="Submit"> <br>

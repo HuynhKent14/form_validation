@@ -1,8 +1,16 @@
 <?php
-require_once "auth.php";
+require_once "Auth.php";
 $auth = new Auth();
 
-$username = $_SESSION['username'];
+/* detect states */
+$isGuest = isset($_SESSION['guest']) && $_SESSION['guest'] === true;
+$isLoggedIn = $auth->isLoggedIn();
+$isAdmin = $isLoggedIn && isset($_SESSION['level']) && $_SESSION['level'] == 1;
+
+/* username display */
+$username = $isGuest
+  ? 'Guest'
+  : ($_SESSION['username'] ?? '');
 ?>
 
 <!DOCTYPE html>
@@ -24,15 +32,25 @@ $username = $_SESSION['username'];
       <span class="closebtn" onclick="toggleExit()">x</span>
       <div class="profile">
         <img src="images/d.jpg">
-        <h4><?php echo $username; ?></h4>
+        <h4><?= htmlspecialchars($username ?: 'Guest', ENT_QUOTES, 'UTF-8') ?></h4>
 
       </div>
       <hr style="color:red; width:60%;">
       <div class="options">
         <ul>
           <li><a href="">Home</a></li>
-          <li><a href="">Dashboard</a></li>
-          <li><a href="logout.php" style="color:rgb(128, 32, 32);">Log Out</a></li>
+
+          <!-- if admin -->
+          <?php if ($isAdmin): ?>
+            <li><a href="dashboard.php">Dashboard</a></li>
+          <?php endif; ?>
+
+          <!-- guest or logged in -->
+          <?php if ($isGuest || !$isLoggedIn): ?>
+            <li><a href="index.php">Sign In</a></li>
+          <?php else: ?>
+            <li><a href="logout.php" style="color:rgb(128, 32, 32);">Log Out</a></li>
+          <?php endif; ?>
         </ul>
       </div>
     </div>
@@ -53,11 +71,21 @@ $username = $_SESSION['username'];
       <div class="title">Le Critique</div>
     </div>
     <div class="movies">
-      <a href="details.php?id=1"><div class="movie-card1"></div></a>
-      <a href="details.php?id=2"><div class="movie-card2"></div></a>
-      <a href="details.php?id=3"><div class="movie-card3"></div></a>
-      <a href="details.php?id=4"><div class="movie-card4"></div></a>
-      <a href="details.php?id=5"><div class="movie-card5"></div></a>
+      <a href="details.php?id=1">
+        <div class="movie-card1"></div>
+      </a>
+      <a href="details.php?id=2">
+        <div class="movie-card2"></div>
+      </a>
+      <a href="details.php?id=3">
+        <div class="movie-card3"></div>
+      </a>
+      <a href="details.php?id=4">
+        <div class="movie-card4"></div>
+      </a>
+      <a href="details.php?id=5">
+        <div class="movie-card5"></div>
+      </a>
     </div>
   </div>
 

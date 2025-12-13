@@ -1,12 +1,16 @@
 <?php
-require_once "database.php";
-
+require_once "Auth.php";
+$auth = new Auth();
 $conn = (new Database())->connect();
 
+// Guest or logged in detector
+$isGuest = isset($_SESSION['guest']) && $_SESSION['guest'] === true;
+$username = $isGuest ? 'Guest' : ($_SESSION['username'] ?? '');
+
+// Get movie ID
 if (!isset($_GET['id'])) {
   exit("Movie not found");
 }
-
 $movieId = (int) $_GET['id'];
 
 // Fetch movie details
@@ -18,11 +22,29 @@ if (!$movie) {
   exit("Movie not found");
 }
 
-// Fetch reviews
+// Review table name
 $reviewTable = "movie{$movieId}reviews";
-$reviews = $conn->query("SELECT * FROM $reviewTable")->fetchAll(PDO::FETCH_ASSOC);
-?>
 
+// Handle comment submission
+if (!$isGuest && isset($_POST['comment'])) {
+  $comment = trim($_POST['comment']);
+  if ($comment !== '') {
+    $comment = substr($comment, 0, 255); // limit to 255 characters
+
+    $stmt = $conn->prepare("INSERT INTO {$reviewTable} (username, review) VALUES (?, ?)");
+    $stmt->execute([$username, $comment]);
+
+    // reload page to show the new comment
+    header("Location: details.php?id={$movieId}");
+    exit;
+  }
+}
+
+// Fetch reviews
+$stmt = $conn->prepare("SELECT * FROM {$reviewTable} ORDER BY id ASC");
+$stmt->execute();
+$reviews = $stmt->fetchAll(PDO::FETCH_ASSOC);
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -46,7 +68,7 @@ $reviews = $conn->query("SELECT * FROM $reviewTable")->fetchAll(PDO::FETCH_ASSOC
 
       <div class="movieDetails">
         <div class="movieImage">
-          <img src="images/movieImage.jpg" alt="">
+          <img src="images/movie<?= $movieId ?>.jpg" alt="">
         </div>
 
         <div class="movieInfo">
@@ -70,14 +92,21 @@ $reviews = $conn->query("SELECT * FROM $reviewTable")->fetchAll(PDO::FETCH_ASSOC
 
       <hr class="separator">
 
-      <div class="commentSec">
-        <div class="commentBox">
-          <input type="text" placeholder="Write a comment">
+      <?php if (!$isGuest): ?>
+        <div class="commentSec">
+          <form method="POST" id="commentForm">
+            <div class="commentBox">
+              <input type="text" name="comment" maxlength="255" placeholder="Write a comment" required>
+            </div>
+            <button type="submit">
+              <img class="commentIcon" src="images/commentIcon.png" alt="Submit Comment">
+            </button>
+          </form>
         </div>
-        <img class="commentIcon" src="images/commentIcon.png" alt="">
-      </div>
+      <?php endif; ?>
 
-      <!-- REVIEWS START HERE -->
+
+      <!-- review table -->
       <?php foreach ($reviews as $review): ?>
         <div class="userComment">
           <img class="userPfp" src="images/userPfp.jpg" alt="">
@@ -91,7 +120,7 @@ $reviews = $conn->query("SELECT * FROM $reviewTable")->fetchAll(PDO::FETCH_ASSOC
           </div>
         </div>
       <?php endforeach; ?>
-      <!-- REVIEWS END HERE -->
+      <!-- review table end-->
     </div>
   </div>
   </div>

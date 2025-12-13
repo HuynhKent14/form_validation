@@ -176,7 +176,7 @@ body {
 .movie-card1 {
   width: 270px;
   height: 100%;
-  background-image: url(../images/movie1.png);
+  background-image: url(../images/movie1.jpg);
   background-size: 260px;
 }
 
@@ -204,6 +204,6 @@ body {
 .movie-card5 {
   height: 100%;
   width: 270px;
-  background-image: url(../images/movie5.png);
+  background-image: url(../images/movie5.jpg);
   background-size: 260px;
 }
