@@ -53,11 +53,11 @@ $username = $_SESSION['username'];
       <div class="title">Le Critique</div>
     </div>
     <div class="movies">
-      <div class="movie-card1"></div>
-      <div class="movie-card2"></div>
-      <div class="movie-card3"></div>
-      <div class="movie-card4"></div>
-      <div class="movie-card5"></div>
+      <a href="details.php?id=1"><div class="movie-card1"></div></a>
+      <a href="details.php?id=2"><div class="movie-card2"></div></a>
+      <a href="details.php?id=3"><div class="movie-card3"></div></a>
+      <a href="details.php?id=4"><div class="movie-card4"></div></a>
+      <a href="details.php?id=5"><div class="movie-card5"></div></a>
     </div>
   </div>
 

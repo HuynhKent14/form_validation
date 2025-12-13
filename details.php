@@ -1,3 +1,29 @@
+<?php
+require_once "database.php";
+
+$conn = (new Database())->connect();
+
+if (!isset($_GET['id'])) {
+  exit("Movie not found");
+}
+
+$movieId = (int) $_GET['id'];
+
+// Fetch movie details
+$stmt = $conn->prepare("SELECT * FROM moviedetails WHERE id = ?");
+$stmt->execute([$movieId]);
+$movie = $stmt->fetch(PDO::FETCH_ASSOC);
+
+if (!$movie) {
+  exit("Movie not found");
+}
+
+// Fetch reviews
+$reviewTable = "movie{$movieId}reviews";
+$reviews = $conn->query("SELECT * FROM $reviewTable")->fetchAll(PDO::FETCH_ASSOC);
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,19 +51,18 @@
 
         <div class="movieInfo">
           <img class="ratings" src="images/starImage.png" alt="">
-          <div class="movieTitle">Kimetsu No Yaiba</div>
-
+          <div class="movieTitle"><?= htmlspecialchars($movie['title']) ?></div>
           <div class="movieDirector">
             <span class="directorLabel">Director:</span>
-            <span class="movieDirector">Haruo Sotozaki</span>
+            <span class="movieDirector"><?= htmlspecialchars($movie['director']) ?></span>
           </div>
 
-          <div class="yearReleased">2023</div>
+          <div class="yearReleased"><?= $movie['year'] ?></div>
 
           <div class="synopsisSec">
             <h2>Synopsis</h2>
             <p class="synopsisPar">
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+              <?= htmlspecialchars($movie['synopsis']) ?>
             </p>
           </div>
         </div>
@@ -52,16 +77,21 @@
         <img class="commentIcon" src="images/commentIcon.png" alt="">
       </div>
 
-      <div class="userComment">
-        <img class="userPfp" src="images/userPfp.jpg" alt="">
-        <div class="commentDetails">
-          <div class="userName">SenpaiDaisuki_20</div>
-          <div class="commentDate">12/8/2025</div>
-          <p class="commentText">
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-          </p>
+      <!-- REVIEWS START HERE -->
+      <?php foreach ($reviews as $review): ?>
+        <div class="userComment">
+          <img class="userPfp" src="images/userPfp.jpg" alt="">
+          <div class="commentDetails">
+            <div class="userName">
+              <?= htmlspecialchars($review['username'], ENT_QUOTES, 'UTF-8') ?>
+            </div>
+            <p class="commentText">
+              <?= htmlspecialchars($review['review'], ENT_QUOTES, 'UTF-8') ?>
+            </p>
+          </div>
         </div>
-      </div>
+      <?php endforeach; ?>
+      <!-- REVIEWS END HERE -->
     </div>
   </div>
   </div>
