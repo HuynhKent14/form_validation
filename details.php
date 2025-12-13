@@ -15,6 +15,7 @@ if (!isset($_GET['id'])) {
 }
 $movieId = (int) $_GET['id'];
 
+
 // Fetch movie details
 $stmt = $conn->prepare("SELECT * FROM moviedetails WHERE id = ?");
 $stmt->execute([$movieId]);
@@ -46,6 +47,9 @@ if (!$isGuest && isset($_POST['comment'])) {
 $stmt = $conn->prepare("SELECT * FROM {$reviewTable} ORDER BY id ASC");
 $stmt->execute();
 $reviews = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -56,6 +60,7 @@ $reviews = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Movie Details</title>
   <link rel="stylesheet" href="css/Details.css">
+
 </head>
 
 <body>
@@ -159,5 +164,12 @@ $reviews = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 </body>
 <script src="javascript/landing.js"></script>
+<script src="javascript/changebg.js"></script>
+<script>
+  window.addEventListener('load', function() {
+    getBgID(<?= $movieId; ?>);
+  })
+</script>
+
 
 </html>
